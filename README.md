@@ -51,19 +51,20 @@ This is simple way to use the configuration for node scripts. Other options
 below will not work if this is set. Targets the current node version in
 babel-preset-env while disabling the extra imports.
 
-### productionTargets : object = [`modern browsers`](https://github.com/babel/babel/tree/master/packages/babel-preset-env#options)
+### productionTargets : object = [`modern browsers`](http://browserl.ist/?q=last+2+versions%2C+not+%3C+0.05%25%2C+not+ie+%3C+11%2C+not+op_mini+all)
 
-Can be used to override babel-preset-env targets for building production.
+Can be used to override babel-preset-env targets for building production. See
+[babel-preset-env configuration options](https://github.com/babel/babel/tree/master/packages/babel-preset-env#options)
 
-### additionalProductionTargets: object = [{}](https://github.com/babel/babel/tree/master/packages/babel-preset-env#options)
+### additionalProductionTargets: object = undefined
 
-Is merged with the default productionTargets. Use this to expand support.
+Is merged with the default productionTargets. Use this to extend base production support.
 
-### developmentTargets : object = [`latest firefox & chrome`](https://github.com/babel/babel/tree/master/packages/babel-preset-env#options)
+### developmentTargets : object = [`latest firefox & chrome`](http://browserl.ist/?q=last+1+Chrome+versions%2C+last+1+Firefox+versions)
 
 Can be used to override babel-preset-env targets for building development.
 
-### targets : object = [`modern browsers`](https://github.com/babel/babel/tree/master/packages/babel-preset-env#options)
+### targets : object = undefined
 
 Can be used to override babel-preset-env targets for non-testing environment.
 
