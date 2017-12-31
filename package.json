@@ -21,6 +21,9 @@
     "type": "git",
     "url": "git@github.com:ntucker/babel-preset-anansi.git"
   },
+  "engines" : {
+    "node" : ">=5.12"
+  },
   "dependencies": {
     "babel-minify": "^0.2.0",
     "babel-plugin-add-module-exports": "^0.2.1",

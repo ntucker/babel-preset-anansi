@@ -28,6 +28,21 @@ Or configure options
 }
 ```
 
+```json
+{
+  "presets": [
+    [
+      "@anansi/babel-preset",
+      {
+        "additionalProductionTargets": {
+          "explorer": "10"
+        }
+      }
+    ]
+  ]
+}
+```
+
 ## Options
 
 ### runInNode : bool = false
@@ -36,15 +51,19 @@ This is simple way to use the configuration for node scripts. Other options
 below will not work if this is set. Targets the current node version in
 babel-preset-env while disabling the extra imports.
 
-### productionTargets : object = (`modern browsers`)[https://github.com/ai/browserslist]
+### productionTargets : object = (`modern browsers`)[https://github.com/babel/babel/tree/master/packages/babel-preset-env#options]
 
 Can be used to override babel-preset-env targets for building production.
 
-### developmentTargets : object = (`latest firefox & chrome`)[https://github.com/ai/browserslist]
+### additionalProductionTargets: object = {}[https://github.com/babel/babel/tree/master/packages/babel-preset-env#options]
+
+Is merged with the default productionTargets. Use this to expand support.
+
+### developmentTargets : object = (`latest firefox & chrome`)[https://github.com/babel/babel/tree/master/packages/babel-preset-env#options]
 
 Can be used to override babel-preset-env targets for building development.
 
-### targets : object = (`modern browsers`)[https://github.com/ai/browserslist]
+### targets : object = (`modern browsers`)[https://github.com/babel/babel/tree/master/packages/babel-preset-env#options]
 
 Can be used to override babel-preset-env targets for non-testing environment.
 

@@ -1,6 +1,6 @@
 var env = process.env.BABEL_ENV || process.env.NODE_ENV
 
-// options: targets, developmentTargets, productionTargets, modules, runInNode, minify
+// options: targets, developmentTargets, productionTargets, additionalProductionTargets, modules, runInNode, minify
 function buildPreset(context, options = {}) {
   options = Object.assign({ runInNode: false, minify: false }, options)
   const preset = {
@@ -78,7 +78,8 @@ function buildPreset(context, options = {}) {
             'not < 0.05%',
             'not ie < 11',
             'not op_mini all',
-          ],
+          ].concat(options.additionalProductionTargets.browsers || []),
+          ...options.additionalProductionTargets,
         }
       }
     }
