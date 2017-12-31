@@ -40,7 +40,7 @@ babel-preset-env while disabling the extra imports.
 
 Can be used to override babel-preset-env targets for building production.
 
-### developmentTargets : object = (`modern browsers`)[https://github.com/ai/browserslist]
+### developmentTargets : object = (`latest firefox & chrome`)[https://github.com/ai/browserslist]
 
 Can be used to override babel-preset-env targets for building development.
 
