@@ -1,6 +1,6 @@
 {
   "name": "@anansi/babel-preset",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Provides good default babel config for React projects",
   "main": "index.js",
   "scripts": {
@@ -21,8 +21,8 @@
     "type": "git",
     "url": "git@github.com:ntucker/babel-preset-anansi.git"
   },
-  "engines" : {
-    "node" : ">=5.12"
+  "engines": {
+    "node": ">=5.12"
   },
   "dependencies": {
     "babel-minify": "^0.2.0",
