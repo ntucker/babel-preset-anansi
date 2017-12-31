@@ -16,6 +16,11 @@
   ],
   "author": "Nathaniel Tucker",
   "license": "BSD",
+  "homepage": "https://github.com/ntucker/babel-preset-anansi",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ntucker/babel-preset-anansi.git"
+  },
   "dependencies": {
     "babel-minify": "^0.2.0",
     "babel-plugin-add-module-exports": "^0.2.1",
