@@ -26,20 +26,20 @@ function buildPreset(context, options = {}) {
       preset.plugins.unshift(
         require('babel-plugin-transform-react-inline-elements'),
         require('babel-plugin-transform-react-constant-elements'),
-        require('babel-plugin-transform-react-remove-prop-types').default
+        require('babel-plugin-transform-react-remove-prop-types').default,
       )
       break
     case 'development':
       preset.plugins.unshift(
         require('babel-plugin-transform-react-jsx-source'),
         require('babel-plugin-transform-react-jsx-self'),
-        require('react-hot-loader/babel')
+        require('react-hot-loader/babel'),
       )
       break
     case 'test':
       preset.plugins.unshift(
         require('babel-plugin-transform-react-jsx-source'),
-        require('babel-plugin-transform-react-jsx-self')
+        require('babel-plugin-transform-react-jsx-self'),
       )
       break
   }
@@ -47,7 +47,7 @@ function buildPreset(context, options = {}) {
   if (!options.runInNode && env === 'production') {
     preset.plugins.unshift(
       require('babel-plugin-ramda').default,
-      require('babel-plugin-lodash')
+      require('babel-plugin-lodash'),
     )
   }
 
@@ -78,7 +78,11 @@ function buildPreset(context, options = {}) {
             'not < 0.05%',
             'not ie < 11',
             'not op_mini all',
-          ].concat(options.additionalProductionTargets.browsers || []),
+          ].concat(
+            (options.additionalProductionTargets &&
+              options.additionalProductionTargets.browsers) ||
+              [],
+          ),
           ...options.additionalProductionTargets,
         }
       }
