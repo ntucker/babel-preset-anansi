@@ -25,11 +25,11 @@
     "node": ">=5.12"
   },
   "dependencies": {
-    "babel-minify": "^0.2.0",
+    "babel-minify": "^0.4.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-lodash": "^3.3.2",
-    "babel-plugin-ramda": "^1.4.3",
+    "babel-plugin-ramda": "^1.6.1",
     "babel-plugin-react-require": "^3.0.0",
     "babel-plugin-root-import": "^5.1.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -43,10 +43,10 @@
     "babel-plugin-transform-react-inline-elements": "^6.22.0",
     "babel-plugin-transform-react-jsx-self": "^6.22.0",
     "babel-plugin-transform-react-jsx-source": "^6.22.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.12",
-    "babel-preset-env": "^1.6.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "caniuse-lite": "^1.0.30000792",
+    "caniuse-lite": "^1.0.30000839",
     "react-hot-loader": "^3.1.3",
     "ric-shim": "^1.0.0"
   },
