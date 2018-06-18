@@ -1,6 +1,6 @@
 {
   "name": "@anansi/babel-preset",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Provides good default babel config for React projects",
   "main": "index.js",
   "scripts": {
@@ -51,8 +51,7 @@
     "ric-shim": "^1.0.0"
   },
   "peerDependencies": {
-    "babel-core": "^6.26.0",
-    "react-immutable-proptypes": "^2.1.0"
+    "babel-core": "^6.26.0"
   },
   "devDependencies": {
     "react": "^16.4.1"
