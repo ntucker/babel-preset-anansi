@@ -4,43 +4,32 @@ var env = process.env.BABEL_ENV || process.env.NODE_ENV
 function buildPreset(context, options = {}) {
   options = Object.assign({ runInNode: false, minify: false }, options)
   const preset = {
-    presets: [require('babel-preset-react')],
+    presets: [
+      [require('@babel/preset-react'), { development: env !== 'production' }],
+    ],
     plugins: [
       require('babel-plugin-react-require').default,
-      require('babel-plugin-transform-decorators-legacy').default,
+      require('@babel/plugin-proposal-decorators').default,
       require('babel-plugin-root-import').default,
       //stage 1
-      require('babel-plugin-transform-export-extensions'),
+      require('@babel/plugin-proposal-export-default-from'),
+      require('@babel/plugin-proposal-export-namespace-from'),
       //stage 2
-      require('babel-plugin-transform-class-properties'),
+      require('@babel/plugin-proposal-class-properties'),
       //stage 3
-      require('babel-plugin-syntax-dynamic-import'),
-      [
-        require('babel-plugin-transform-object-rest-spread'),
-        { useBuiltIns: true },
-      ],
+      require('@babel/plugin-syntax-dynamic-import'),
     ],
   }
   switch (env) {
     case 'production':
       preset.plugins.unshift(
-        require('babel-plugin-transform-react-inline-elements'),
-        require('babel-plugin-transform-react-constant-elements'),
+        require('@babel/plugin-transform-react-inline-elements'),
+        require('@babel/plugin-transform-react-constant-elements'),
         require('babel-plugin-transform-react-remove-prop-types').default,
       )
       break
     case 'development':
-      preset.plugins.unshift(
-        require('babel-plugin-transform-react-jsx-source'),
-        require('babel-plugin-transform-react-jsx-self'),
-        require('react-hot-loader/babel'),
-      )
-      break
-    case 'test':
-      preset.plugins.unshift(
-        require('babel-plugin-transform-react-jsx-source'),
-        require('babel-plugin-transform-react-jsx-self'),
-      )
+      preset.plugins.unshift(require('react-hot-loader/babel'))
       break
   }
 
@@ -53,7 +42,7 @@ function buildPreset(context, options = {}) {
 
   if (env === 'test' || options.runInNode) {
     preset.presets.unshift([
-      require('babel-preset-env').default,
+      require('@babel/preset-env').default,
       {
         targets: {
           node: 'current',
@@ -62,9 +51,6 @@ function buildPreset(context, options = {}) {
     ])
     preset.plugins.unshift(require('babel-plugin-dynamic-import-node').default)
   } else {
-    if (options.modules) {
-      preset.plugins.unshift(require('babel-plugin-add-module-exports'))
-    }
     let targets = options.targets
     if (!targets) {
       if (env === 'development') {
@@ -88,7 +74,7 @@ function buildPreset(context, options = {}) {
       }
     }
     preset.presets.unshift([
-      require('babel-preset-env').default,
+      require('@babel/preset-env').default,
       {
         targets,
         useBuiltIns: true,
