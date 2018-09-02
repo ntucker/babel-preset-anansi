@@ -14,6 +14,8 @@ function buildPreset(context, options = {}) {
       //stage 1
       require('@babel/plugin-proposal-export-default-from'),
       require('@babel/plugin-proposal-export-namespace-from'),
+      require('@babel/plugin-proposal-optional-chaining'),
+      require('@babel/plugin-proposal-nullish-coalescing-operator'),
       //stage 2
       require('@babel/plugin-proposal-class-properties'),
       //stage 3
