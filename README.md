@@ -105,3 +105,24 @@ in webpack
 ### minify: bool = false
 
 Setting this to true will run the minifier [babel-minify](https://github.com/babel/babel-minify)
+
+## Extra plugins used
+
+In addition to providing good production/development/testing transformations; some additional non-standard features
+are included:
+
+### Stage 3
+* Dynamic import (`import()`)
+
+### Stage 2
+* [Class properties](http://babeljs.io/docs/en/next/babel-plugin-proposal-class-properties)
+* [Decorators](https://github.com/tc39/proposal-decorators)
+
+### Stage 1
+* [`export v from 'mod';`](http://babeljs.io/docs/en/next/babel-plugin-proposal-export-default-from)
+* [`export * as ns from 'mod';`](http://babeljs.io/docs/en/next/babel-plugin-proposal-export-namespace-from)
+* [`a.?b.?()`](http://babeljs.io/docs/en/next/babel-plugin-proposal-optional-chaining)
+* [`var foo = object.foo ?? "default"`](http://babeljs.io/docs/en/next/babel-plugin-proposal-nullish-coalescing-operator)
+
+### Other
+* [Root import](https://github.com/entwicklerstube/babel-plugin-root-import#readme)

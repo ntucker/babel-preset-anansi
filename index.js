@@ -9,7 +9,6 @@ function buildPreset(context, options = {}) {
     ],
     plugins: [
       require('babel-plugin-react-require').default,
-      require('@babel/plugin-proposal-decorators').default,
       require('babel-plugin-root-import').default,
       //stage 1
       require('@babel/plugin-proposal-export-default-from'),
@@ -19,6 +18,7 @@ function buildPreset(context, options = {}) {
       //stage 2
       require('@babel/plugin-proposal-class-properties'),
       //stage 3
+      require('@babel/plugin-proposal-decorators').default,
       require('@babel/plugin-syntax-dynamic-import'),
     ],
   }
