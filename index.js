@@ -18,7 +18,7 @@ function buildPreset(context, options = {}) {
       //stage 2
       require('@babel/plugin-proposal-class-properties'),
       //stage 3
-      require('@babel/plugin-proposal-decorators').default,
+      require('@babel/plugin-proposal-decorators'),
       require('@babel/plugin-syntax-dynamic-import'),
     ],
   }

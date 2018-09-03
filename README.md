@@ -106,7 +106,7 @@ in webpack
 
 Setting this to true will run the minifier [babel-minify](https://github.com/babel/babel-minify)
 
-## Extra plugins used
+## Non-standard language support
 
 In addition to providing good production/development/testing transformations; some additional non-standard features
 are included:
