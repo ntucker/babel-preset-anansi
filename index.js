@@ -1,6 +1,6 @@
 var env = process.env.BABEL_ENV || process.env.NODE_ENV
 
-// options: targets, developmentTargets, productionTargets, additionalProductionTargets, modules, runInNode, minify
+// options: targets, developmentTargets, productionTargets, additionalProductionTargets, modules, runInNode, typing, minify
 function buildPreset(context, options = {}) {
   options = Object.assign({ runInNode: false, minify: false }, options)
   const preset = {
@@ -28,6 +28,18 @@ function buildPreset(context, options = {}) {
       //stage 3
       require('@babel/plugin-syntax-dynamic-import'),
     ],
+  }
+  switch (typing) {
+    case 'flow':
+      preset.presets.push(
+        require('@babel/preset-flow')
+      )
+      break
+    case 'typescript':
+      preset.presets.push(
+        require('@babel/preset-typescript')
+      )
+      break
   }
   switch (env) {
     case 'production':
