@@ -29,7 +29,7 @@ function buildPreset(context, options = {}) {
       require('@babel/plugin-syntax-dynamic-import'),
     ],
   }
-  switch (typing) {
+  switch (options.typing) {
     case 'flow':
       preset.presets.push(
         require('@babel/preset-flow')
