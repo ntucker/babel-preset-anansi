@@ -10,15 +10,22 @@ function buildPreset(context, options = {}) {
     plugins: [
       require('babel-plugin-react-require').default,
       require('babel-plugin-root-import').default,
+      // stage 3, but must come before class-properties
+      [
+        require('@babel/plugin-proposal-decorators'),
+        { "legacy": true },
+      ],
       //stage 1
       require('@babel/plugin-proposal-export-default-from').default,
       require('@babel/plugin-proposal-export-namespace-from'),
       require('@babel/plugin-proposal-optional-chaining'),
       require('@babel/plugin-proposal-nullish-coalescing-operator'),
       //stage 2
-      require('@babel/plugin-proposal-class-properties'),
+      [
+        require('@babel/plugin-proposal-class-properties'),
+        { "loose" : true },
+      ],
       //stage 3
-      require('@babel/plugin-proposal-decorators'),
       require('@babel/plugin-syntax-dynamic-import'),
     ],
   }
@@ -79,7 +86,7 @@ function buildPreset(context, options = {}) {
       require('@babel/preset-env').default,
       {
         targets,
-        useBuiltIns: true,
+        useBuiltIns: 'entry',
         modules: options.modules || false,
       },
     ])
