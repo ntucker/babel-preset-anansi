@@ -11,7 +11,7 @@ function buildPreset(context, options = {}) {
       require('babel-plugin-react-require').default,
       require('babel-plugin-root-import').default,
       //stage 1
-      require('@babel/plugin-proposal-export-default-from'),
+      require('@babel/plugin-proposal-export-default-from').default,
       require('@babel/plugin-proposal-export-namespace-from'),
       require('@babel/plugin-proposal-optional-chaining'),
       require('@babel/plugin-proposal-nullish-coalescing-operator'),
