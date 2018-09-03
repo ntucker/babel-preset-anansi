@@ -106,9 +106,10 @@ in webpack
 
 Setting this to true will run the minifier [babel-minify](https://github.com/babel/babel-minify)
 
-### typing: 'flow' | 'typescript'
+### typing: 'flow' | 'typescript' | false = false
 
 Adds support for these typecheckers. These remove the typings so the output runs in the target environment.
+If false, no static typechecker will be supported.
 
 ## Non-standard language support
 
