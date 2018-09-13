@@ -49,8 +49,8 @@
     "babel-plugin-react-require": "^3.0.0",
     "babel-plugin-root-import": "^6.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.15",
-    "caniuse-lite": "^1.0.30000883",
-    "react-hot-loader": "^4.3.5",
+    "caniuse-lite": "^1.0.30000885",
+    "react-hot-loader": "^4.3.6",
     "ric-shim": "^1.0.0",
     "stable": "^0.1.8"
   },
@@ -58,7 +58,7 @@
     "@babel/core": "^7.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "react": "^16.4.2"
+    "@babel/core": "^7.0.1",
+    "react": "^16.5.0"
   }
 }
