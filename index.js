@@ -70,7 +70,7 @@ function buildPreset(context, options = {}) {
         },
       },
     ])
-    preset.plugins.unshift(require('babel-plugin-dynamic-import-node').default)
+    preset.plugins.unshift(require('babel-plugin-dynamic-import-node'))
   } else {
     let targets = options.targets
     if (!targets) {
