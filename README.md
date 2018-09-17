@@ -111,7 +111,7 @@ Setting this to true will run the minifier [babel-minify](https://github.com/bab
 Adds support for these typecheckers. These remove the typings so the output runs in the target environment.
 If false, no static typechecker will be supported.
 
-## Non-standard language support
+## Future language support
 
 In addition to providing good production/development/testing transformations; some additional non-standard features
 are included:
