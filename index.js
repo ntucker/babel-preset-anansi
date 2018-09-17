@@ -62,6 +62,7 @@ function buildPreset(context, options = {}) {
   }
 
   if (env === 'test' || options.runInNode) {
+    preset.plugins.push(require('@babel/plugin-proposal-object-rest-spread'))
     preset.presets.unshift([
       require('@babel/preset-env').default,
       {
