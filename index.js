@@ -2,7 +2,10 @@ var env = process.env.BABEL_ENV || process.env.NODE_ENV
 
 // options: targets, developmentTargets, productionTargets, additionalProductionTargets, modules, runInNode, typing, minify
 function buildPreset(context, options = {}) {
-  options = Object.assign({ runInNode: false, minify: false, typing: false }, options)
+  options = Object.assign(
+    { runInNode: false, minify: false, typing: false },
+    options,
+  )
   const preset = {
     presets: [
       [require('@babel/preset-react'), { development: env !== 'production' }],
@@ -13,7 +16,7 @@ function buildPreset(context, options = {}) {
       // stage 3, but must come before class-properties
       [
         require('@babel/plugin-proposal-decorators'),
-        { "legacy": true },
+        { decoratorsBeforeExport: true },
       ],
       //stage 1
       require('@babel/plugin-proposal-export-default-from').default,
@@ -21,24 +24,17 @@ function buildPreset(context, options = {}) {
       require('@babel/plugin-proposal-optional-chaining'),
       require('@babel/plugin-proposal-nullish-coalescing-operator'),
       //stage 2
-      [
-        require('@babel/plugin-proposal-class-properties'),
-        { "loose" : true },
-      ],
+      require('@babel/plugin-proposal-class-properties'),
       //stage 3
       require('@babel/plugin-syntax-dynamic-import'),
     ],
   }
   switch (options.typing) {
     case 'flow':
-      preset.presets.push(
-        require('@babel/preset-flow')
-      )
+      preset.presets.push(require('@babel/preset-flow'))
       break
     case 'typescript':
-      preset.presets.push(
-        require('@babel/preset-typescript')
-      )
+      preset.presets.push(require('@babel/preset-typescript'))
       break
   }
   switch (env) {
