@@ -46,7 +46,7 @@ function buildPreset(context, options = {}) {
       )
       break
     case 'development':
-      preset.plugins.unshift(require('react-hot-loader/babel').default)
+      preset.plugins.unshift(require('react-hot-loader/babel'))
       break
   }
 
@@ -67,7 +67,7 @@ function buildPreset(context, options = {}) {
         },
       },
     ])
-    preset.plugins.unshift(require('babel-plugin-dynamic-import-node').default)
+    preset.plugins.unshift(require('babel-plugin-dynamic-import-node'))
   } else {
     let targets = options.targets
     if (!targets) {
@@ -101,9 +101,8 @@ function buildPreset(context, options = {}) {
     ])
   }
   if (options.minify && env === 'production') {
-    preset.presets.unshift(require('babel-minify').default)
+    preset.presets.unshift(require('babel-minify'))
   }
-  console.log(preset)
   return preset
 }
 
