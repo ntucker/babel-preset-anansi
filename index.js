@@ -8,7 +8,10 @@ function buildPreset(context, options = {}) {
   )
   const preset = {
     presets: [
-      [require('@babel/preset-react').default, { development: env !== 'production' }],
+      [
+        require('@babel/preset-react').default,
+        { development: env !== 'production' },
+      ],
     ],
     plugins: [
       require('babel-plugin-react-require').default,
@@ -32,6 +35,9 @@ function buildPreset(context, options = {}) {
   switch (options.typing) {
     case 'flow':
       preset.presets.push(require('@babel/preset-flow').default)
+      if (env === 'development') {
+        preset.plugins.unshift(require('babel-plugin-flow-react-proptypes'))
+      }
       break
     case 'typescript':
       preset.presets.push(require('@babel/preset-typescript').default)
@@ -58,7 +64,9 @@ function buildPreset(context, options = {}) {
   }
 
   if (env === 'test' || options.runInNode) {
-    preset.plugins.push(require('@babel/plugin-proposal-object-rest-spread').default)
+    preset.plugins.push(
+      require('@babel/plugin-proposal-object-rest-spread').default,
+    )
     preset.presets.unshift([
       require('@babel/preset-env').default,
       {
